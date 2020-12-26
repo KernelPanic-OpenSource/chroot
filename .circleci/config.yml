@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  CherishOS-Bacon:
+  chroot:
    docker:
       - image: dopaemon/docker-image:android
    steps:
@@ -15,4 +15,4 @@ workflows:
   version: 2.1
   cooking:
     jobs:
-      - CherishOS-Bacon
+      - chroot
