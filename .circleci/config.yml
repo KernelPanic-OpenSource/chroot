@@ -1,0 +1,18 @@
+version: 2.1
+jobs:
+  CherishOS-Bacon:
+   docker:
+      - image: dopaemon/docker-image:android
+   steps:
+      - run:
+          name: Chroot Tester
+          no_output_timeout: 20m
+          command: |
+            docker run --rm -ti ubuntu
+            sudo apt install neofetch
+            neofetch
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - CherishOS-Bacon
